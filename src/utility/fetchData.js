@@ -32,7 +32,7 @@ module.exports = async data => {
               console.log(response.status);
               if ([200].includes(response.status)) {
                 await AsyncStorage.setItem(
-                  `PENDING_API_CALL_${data?.asyncKey}`,
+                  `COMPLETED_API_CALL_${data?.asyncKey}`,
                   JSON.stringify({...data, res: true}),
                 );
                 await AsyncStorage.removeItem(itemKey);
